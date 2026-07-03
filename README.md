@@ -105,6 +105,8 @@ App Hybride :adb shell dumpsys activity activities | findstr "ResumedActivity"
 ```
 
 ### 📂 Structure du Projet
+```bash
+
 mobile-automation/
 │
 ├── test/
@@ -138,6 +140,8 @@ mobile-automation/
 ├── wdio.conf.js
 ├── package.json
 └── README.md
+
+```
 
 ### ▶️ Exécution des Tests
 - pour lancer tous les tests :
