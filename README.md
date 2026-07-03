@@ -104,3 +104,63 @@ App Natif: adb shell dumpsys window windows | findstr mCurrentFocus
 App Hybride :adb shell dumpsys activity activities | findstr "ResumedActivity"
 ```
 
+### 📂 Structure du Projet
+mobile-automation/
+│
+├── test/
+│   ├── specs/
+│   │   ├── login.spec.js
+│   │   └── search.spec.js
+│   │
+│   ├── pageobjects/
+│   │   ├── PageLogin.js
+│   │   ├── PageHome.js
+│   │   └── PageBase.js
+│
+├── common/
+│   ├── actions.js
+│   └── assertions.js
+|
+|
+├── elements/
+│   ├── home.js
+│   └── login.js
+│
+├── reports/
+│
+├── allure-results/
+│
+├── allure-report/
+│
+├── app/
+│   └── demo.apk
+│
+├── wdio.conf.js
+├── package.json
+└── README.md
+
+### ▶️ Exécution des Tests
+- pour lancer tous les tests :
+```bash
+npx wdio run wdio.conf.js
+```
+- pour lancer un test specifique:
+```bash
+npx wdio run wdio.conf.js --spec ./test/specs/login.spec.js
+```
+- pour lancer un test avec tag:
+```bash
+npx wdio run wdio.conf.js --mochaOpts.grep "Login"
+```
+
+### 📊 Rapport Allure
+
+- Générer le rapport :
+```bash
+allure generate allure-results --clean
+```
+
+- Ouvrir le rapport :
+```bash
+allure open allure-report
+```
